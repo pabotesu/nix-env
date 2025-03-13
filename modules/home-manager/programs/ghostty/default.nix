@@ -3,12 +3,10 @@
   home.packages = with pkgs; [
       ghostty
   ];
-};
-
-home.file = {
-  "config" = {
-    target = ".config/ghostty/config";
-    source = ./config.nix;
+  home.file = {
+    "config" = {
+      target = ".config/ghostty/config";
+      source = ./config.nix;
+    };
   };
 };
-  

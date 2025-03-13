@@ -5,7 +5,7 @@
 
     # Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     # HomeManager
     home-manager = {
@@ -15,8 +15,8 @@
 
     # Darwin
     darwin = {
-      url = "github:lnl7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs-darwin";
+      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Utilities
@@ -76,7 +76,7 @@
           inherit inputs outputs;
           userConfig = users.${username};
           nhModules = "${self}/modules/home-manager";
-          envTheme = ""${self}/themes/${theme}"
+          envTheme = "${self}/themes/${theme}";
         };
         modules = [
           ./home/${username}/${hostname}
@@ -88,7 +88,7 @@
     };
 
     darwinConfigurations = {
-      "mac-machine" = mkDarwinConfiguration "pabotesu-macmini" "pabotesu";
+      "mac-machine" = mkDarwinConfiguration "mac-machine" "pabotesu";
     };
 
     homeConfigurations = {

@@ -31,7 +31,7 @@
   };
 
   # Add ability to use TouchID for sudo
-  security.pam.services.sudo_local.touchIdAuth = true;
+  # security.pam.services.sudo_local.touchIdAuth = true;
 
   # System settings
   system = {
@@ -74,7 +74,7 @@
         _FXSortFoldersFirst = true;
       };
       dock = {
-        autohide = true;
+        autohide = false;
         expose-animation-duration = 0.15;
         show-recents = false;
         showhidden = true;
@@ -91,16 +91,16 @@
         disable-shadow = true;
       };
     };
-    keyboard = {
-      enableKeyMapping = true;
+    #keyboard = {
+     # enableKeyMapping = true;
       # Remap §± to ~
-      userKeyMapping = [
-        {
-          HIDKeyboardModifierMappingDst = 30064771125;
-          HIDKeyboardModifierMappingSrc = 30064771172;
-        }
-      ];
-    };
+      #userKeyMapping = [
+        #{
+          #HIDKeyboardModifierMappingDst = 30064771125;
+          #HIDKeyboardModifierMappingSrc = 30064771172;
+        #}
+     # ];
+    #};
   };
 
   # Zsh configuration
@@ -108,7 +108,12 @@
 
   # Fonts configuration
   fonts.packages = with pkgs; [
-    nerd-fonts.meslo-lg
+    (nerdfonts.override { 
+      fonts = [  
+        "FiraCode" 
+        "DroidSansMono" 
+        ];
+      })
   ];
 
   # Used for backwards compatibility, please read the changelog before changing.
