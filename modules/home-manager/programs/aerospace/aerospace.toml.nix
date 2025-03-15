@@ -135,5 +135,4 @@ alt-shift-l = ['join-with right', 'mode main']
 
 #[[on-window-detected]]
 #if.app-id = 'us.zoom.xos'
-#
-run = 'move-node-to-workspace 5'
+#run = 'move-node-to-workspace 5'

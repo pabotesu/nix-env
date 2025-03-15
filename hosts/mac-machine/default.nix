@@ -32,10 +32,14 @@
         restart_service = "changed";
         start_service = true;
 	    }
+      "mas"
      ];
      casks = [
       "1password"
      ];
+     masApps = {
+      "kindle" = 302584613;
+     };
      taps = [
        "nikitabobko/tap"
        "dimentium/autoraise"
