@@ -33,5 +33,6 @@
       if pkgs.stdenv.isDarwin
       then "/Users/${userConfig.name}"
       else "/home/${userConfig.name}";
+    file.".ssh/config".source = ./ssh.config;
   };
 }
