@@ -4,16 +4,44 @@
   userConfig,
   ...
 }: {
+
   # Nixpkgs configuration
   nixpkgs = {
     overlays = [
       outputs.overlays.stable-packages
     ];
-
     config = {
       allowUnfree = true;
     };
   };
+
+  # Homebrew configuration
+  nix-homebrew = {
+     enable = true;
+     enableRosetta = true;
+     user = "${userConfig.name}";
+     autoMigrate = true;
+  };
+
+  homebrew = {
+     enable = true;
+     brews = [
+      {
+        name = "autoraise";
+        args = ["with-dalternative_task_switcher"];
+        restart_service = "changed";
+        start_service = true;
+	    }
+     ];
+     casks = [
+      "1password"
+     ];
+     taps = [
+       "nikitabobko/tap"
+       "dimentium/autoraise"
+     ];
+     onActivation.cleanup = "zap";
+   };
 
   # Nix settings
   nix = {
@@ -30,14 +58,23 @@
     home = "/Users/${userConfig.name}";
   };
 
-  # Add ability to use TouchID for sudo
-  # security.pam.services.sudo_local.touchIdAuth = true;
-
   # System settings
   system = {
     defaults = {
       CustomUserPreferences = {
         NSGlobalDomain."com.apple.mouse.linear" = true;
+        "com.apple.symbolichotkeys" = {
+          AppleSymbolicHotKeys = {
+            # Disable 'Cmd + Space' for Spotlight Search
+            "64" = {
+              enabled = false;
+            };
+            # Disable 'Cmd + Alt + Space' for Finder search window
+            "65" = {
+              enabled = false;
+            };
+          };
+        };
       };
       NSGlobalDomain = {
         AppleInterfaceStyle = "Dark";
@@ -74,11 +111,12 @@
         _FXSortFoldersFirst = true;
       };
       dock = {
-        autohide = false;
+        autohide = true;
         expose-animation-duration = 0.15;
         show-recents = false;
         showhidden = true;
         persistent-apps = [];
+        persistent-others = [];
         tilesize = 30;
         wvous-bl-corner = 1;
         wvous-br-corner = 1;
@@ -86,21 +124,27 @@
         wvous-tr-corner = 1;
       };
       screencapture = {
-        location = "/Users/${userConfig.name}/Downloads/temp";
+        location = "/Users/${userConfig.name}/Pictures/screenshots";
         type = "png";
         disable-shadow = true;
       };
     };
-    #keyboard = {
-     # enableKeyMapping = true;
+    keyboard = {
+      remapCapsLockToControl = true;
+      enableKeyMapping = true;
       # Remap §± to ~
       #userKeyMapping = [
         #{
           #HIDKeyboardModifierMappingDst = 30064771125;
           #HIDKeyboardModifierMappingSrc = 30064771172;
         #}
-     # ];
-    #};
+      #];
+    };
+    # The settings will be forcibly reflected without the need to reboot the device.
+    activationScripts.postUserActivation.text = ''
+      # Following line should allow us to avoid a logout/login cycle when changing settings
+      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+    '';
   };
 
   # Zsh configuration
@@ -115,7 +159,6 @@
         ];
       })
   ];
-
   # Used for backwards compatibility, please read the changelog before changing.
   system.stateVersion = 5;
 }

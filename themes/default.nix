@@ -3,9 +3,7 @@ theme: let
 in rec
 {
   # "#RRGGBB"
-  # xcolors = import ./colors/${theme};
+  xcolors = import ./colors/${theme};
   # "RRGGBB"
-  # colors = builtins.mapAttrs (_: value: removeHash value) xcolors;
-  # wezterm colors
-  # wezterm = builtins.readFile ./colors/${theme}/.toml;
+  colors = builtins.mapAttrs (_: value: removeHash value) xcolors;
 }

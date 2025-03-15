@@ -59,4 +59,5 @@ flake-check:
 	@nix flake check
 	@echo "Flake check complete."
 
-bootstrap-mac: install-nix install-nix-darwin
+b
+ootstrap-mac: install-nix install-nix-darwin

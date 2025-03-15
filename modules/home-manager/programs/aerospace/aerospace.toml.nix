@@ -1,5 +1,3 @@
-{};
-''
 # Start AeroSpace at login
 start-at-login = true
 
@@ -21,6 +19,11 @@ on-focus-changed = ['move-mouse window-lazy-center']
 # Automatically unhide macOS hidden apps
 automatically-unhide-macos-hidden-apps = true
 
+# Monitor mapping workspase
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 1
+3 = 3
 # Key mapping preset
 [key-mapping]
 preset = 'qwerty'
@@ -43,7 +46,7 @@ alt-shift-t = 'exec-and-forget open -a "Telegram"'
 alt-shift-f = 'exec-and-forget open -a Finder'
 
 # Window management
-alt-q = "close"
+alt-shift-q = "close"
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 alt-m = 'fullscreen'
@@ -99,10 +102,10 @@ alt-shift-semicolon = 'mode service'
 esc = ['reload-config', 'mode main']
 
 # Reset layout
-r = ['flatten-workspace-tree', 'mode main']
+# alt-r = ['flatten-workspace-tree', 'mode main']
 
 # Toggle floating/tiling layout
-f = ['layout floating tiling', 'mode main']
+# alt-f = ['layout floating tiling', 'mode main']
 
 # Close all windows but current
 backspace = ['close-all-windows-but-current', 'mode main']
@@ -114,23 +117,23 @@ alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
 # Window detection rules
-[[on-window-detected]]
-if.app-id = 'com.brave.Browser'
-run = 'move-node-to-workspace 1'
+#[[on-window-detected]]
+#if.app-id = 'com.brave.Browser'
+#run = 'move-node-to-workspace 1'
 
-[[on-window-detected]]
-if.app-id = 'org.alacritty'
-run = 'move-node-to-workspace 2'
+#[[on-window-detected]]
+#if.app-id = 'org.alacritty'
+#run = 'move-node-to-workspace 2'
 
-[[on-window-detected]]
-if.app-id = 'com.tdesktop.Telegram'
-run = 'move-node-to-workspace 3'
+#[[on-window-detected]]
+#if.app-id = 'com.tdesktop.Telegram'
+#run = 'move-node-to-workspace 3'
 
-[[on-window-detected]]
-if.app-id = 'com.obsproject.obs-studio'
-run = 'move-node-to-workspace 4'
+#[[on-window-detected]]
+#if.app-id = 'com.obsproject.obs-studio'
+#run = 'move-node-to-workspace 4'
 
-[[on-window-detected]]
-if.app-id = 'us.zoom.xos'
+#[[on-window-detected]]
+#if.app-id = 'us.zoom.xos'
+#
 run = 'move-node-to-workspace 5'
-'';

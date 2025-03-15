@@ -21,12 +21,16 @@
 
     # Utilities
     flake-utils.url = "github:numtide/flake-utils";
+
+    # Homebrew
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
   outputs = { 
     self,
     darwin,
     home-manager,
+    nix-homebrew,
     nixpkgs,
     ...
   } @ inputs: let
@@ -65,6 +69,7 @@
         modules = [
           ./hosts/${hostname}
           home-manager.darwinModules.home-manager
+          nix-homebrew.darwinModules.nix-homebrew
         ];
       };
 
@@ -76,7 +81,7 @@
           inherit inputs outputs;
           userConfig = users.${username};
           nhModules = "${self}/modules/home-manager";
-          envTheme = "${self}/themes/${theme}";
+          envTheme = import ./themes/colors/${theme};
         };
         modules = [
           ./home/${username}/${hostname}
@@ -92,8 +97,8 @@
     };
 
     homeConfigurations = {
-      "nabokikh@macmini" = mkHomeConfiguration "aarch64-darwin" "pabotesu" "mac-machine" "oneharf";
-      # "pabotesu@nix-machine" = mkHomeConfiguration "x86_64-linux" "pabotesu" "nix-machine" "oneharf";
+      "pabotesu@mac-machine" = mkHomeConfiguration "aarch64-darwin" "pabotesu" "mac-machine" "onehalf";
+      # "pabotesu@nix-machine" = mkHomeConfiguration "x86_64-linux" "pabotesu" "nix-machine" "onehalf";
     };
 
     overlays = import ./overlays {inherit inputs;};
