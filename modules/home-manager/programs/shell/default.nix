@@ -16,10 +16,10 @@
     shellAliases = {
       cat = "bat";
       grep = "rg";
-      ls = "eza --icons --classify";
-      la = "eza --all --icons --classify";
-      ll = "eza --long --all --git --icons";
-      tree = "eza --icons --classify --tree";
+      ls = "eza --icons --classify=auto";
+      la = "eza --all --icons --classify=auto";
+      ll = "eza --long --all --git --icons --classify=auto";
+      tree = "eza --icons --classify=auto --tree";
       nix-direnv = "echo 'use flake' >> .envrc && direnv allow";
     };
     initExtra = 

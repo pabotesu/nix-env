@@ -32,10 +32,12 @@
         restart_service = "changed";
         start_service = true;
 	    }
+      "borders"
       "mas"
      ];
      casks = [
       "1password"
+      "desktoppr"
      ];
      masApps = {
       "kindle" = 302584613;
@@ -43,6 +45,7 @@
      taps = [
        "nikitabobko/tap"
        "dimentium/autoraise"
+       "FelixKratz/formulae"
      ];
      onActivation.cleanup = "zap";
    };
@@ -148,6 +151,7 @@
     activationScripts.postUserActivation.text = ''
       # Following line should allow us to avoid a logout/login cycle when changing settings
       /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+      /usr/local/bin/desktoppr /Users/pabotesu/Library/wallpaper.png
     '';
   };
 

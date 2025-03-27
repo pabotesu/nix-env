@@ -2,10 +2,9 @@
   description = "Nix Configuration For pabotesu";
 
   inputs = {
-
     # Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     # HomeManager
     home-manager = {
@@ -23,7 +22,8 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     # Homebrew
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    #nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    nix-homebrew.url = "git+https://github.com/zhaofengli/nix-homebrew?ref=refs/pull/71/merge";
   };
 
   outputs = { 
@@ -32,6 +32,7 @@
     home-manager,
     nix-homebrew,
     nixpkgs,
+    nixpkgs-unstable,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -75,10 +76,14 @@
 
     # Function for Home Manager configuration
     mkHomeConfiguration = system: username: hostname: theme:
+      let
+        pkgsUnstable = import inputs.nixpkgs-unstable { inherit system; };
+      in
       home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {inherit system;};
+        pkgs     = import nixpkgs {inherit system;};
+
         extraSpecialArgs = {
-          inherit inputs outputs;
+          inherit inputs outputs pkgsUnstable;
           userConfig = users.${username};
           nhModules = "${self}/modules/home-manager";
           envTheme = import ./themes/colors/${theme};
@@ -98,7 +103,7 @@
 
     homeConfigurations = {
       "pabotesu@mac-machine" = mkHomeConfiguration "aarch64-darwin" "pabotesu" "mac-machine" "onehalf";
-      # "pabotesu@nix-machine" = mkHomeConfiguration "x86_64-linux" "pabotesu" "nix-machine" "onehalf";
+      #"pabotesu@nix-machine" = mkHomeConfiguration "x86_64-linux" "pabotesu" "nix-machine" "onehalf";
     };
 
     overlays = import ./overlays {inherit inputs;};

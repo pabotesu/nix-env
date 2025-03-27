@@ -28,7 +28,8 @@
         padding = {
           x = 10;
           y = 10;
-        };  
+        }; 
+        opacity = 0.8;
       };
 
       scrolling = {
