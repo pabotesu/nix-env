@@ -11,7 +11,10 @@
         live_config_reload = true;
       };
       terminal = {
-        shell.program = "zsh";
+        shell = {
+          program = "zsh";
+          args = ["-l"  "-c"  "zellij attach --index 0 --create"];
+        };
       };
 
       window = {
