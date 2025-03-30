@@ -10,4 +10,5 @@
   magenta = "#c678dd";
   cyan = "#56b6c2";
   white = "#dcdfe4";
+  orange = "#d19a66";
 }
