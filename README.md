@@ -49,7 +49,7 @@ To add a new machine with a new user to your NixOS or nix-darwin configuration, 
         ```
 2. Create System Configuration:
 
-    1. a. Create a new directory under hosts/ for your machine:
+    1. Create a new directory under hosts/ for your machine:
 
         ```sh
         mkdir -p hosts/newmachine
