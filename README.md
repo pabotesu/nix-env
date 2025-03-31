@@ -109,10 +109,11 @@ To add a new machine with a new user to your NixOS or nix-darwin configuration, 
         ```
         home-manager switch --flake ./#newuser@newmachine
         ```
+        
 > [!TIP]
-> If First Run home-manager
+> If First Run darwin-rebuild
 > ```
-> nix run home-manager -- switch --flake "./#newuser@newmachine"
+> nix run nix-darwin/master#darwin-rebuild -- switch --flake .#newmachine
 > ```
 
 > [!TIP]
