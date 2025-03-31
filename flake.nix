@@ -40,10 +40,8 @@
     # Define user configurations
     users = {
       pabotesu = {
-        avatar = ./files/avatar/pabotesu;
         email = "contact@mail.pabotesu.com";
         fullName = "Lee Tesu";
-        #gitKey = "C5810093";
         name = "pabotesu";
       };
     };
