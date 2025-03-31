@@ -22,11 +22,11 @@ To add a new machine with a new user to your NixOS or nix-darwin configuration, 
         ```nix
             # Define user configurations
             users = {
-            pabotesu = {
-                email = "newuser@example.com";
-                fullName = "New User";
-                name = "newuser";
-            };
+                pabotesu = {
+                    email = "newuser@example.com";
+                    fullName = "New User";
+                    name = "newuser";
+                };
             };
         ```
     2. Add the new machine to the appropriate configuration set:
@@ -82,10 +82,10 @@ To add a new machine with a new user to your NixOS or nix-darwin configuration, 
         ```nix
         { nhModules, ... }:
         {
-        imports = [
-            "${nhModules}/common"
-            # and more ...
-        ];
+            imports = [
+                "${nhModules}/common"
+                # and more ...
+            ];
         }
         ```
 
@@ -103,7 +103,7 @@ To add a new machine with a new user to your NixOS or nix-darwin configuration, 
         ```sh
         darwin-rebuild switch --flake .#newmachine
         ```
-        > [!INFO] If First Run darwin-rebuild
+        > [!Tip] If First Run darwin-rebuild
         ```
         nix run nix-darwin/master#darwin-rebuild -- switch --flake .#newmachine
         ```
@@ -113,7 +113,7 @@ To add a new machine with a new user to your NixOS or nix-darwin configuration, 
         ```
         home-manager switch --flake ./#newuser@newmachine
         ```
-        > [!INFO] If First Run home-manager
+        > [!Tip] If First Run home-manager
         ```
        nix run home-manager -- switch --flake "./#newuser@newmachine"
         ```
