@@ -1,11 +1,19 @@
 {pkgs, ...}: {
-  imports = [./starship.nix];
+  imports = [
+    ./starship.nix
+    ./direnv.nix
+  ];
   home.packages = with pkgs; [
     neofetch
     eza
     ripgrep
     bat
     doggo
+    jq
+    nh # nic cli helper
+    nurl # generate nix fetcher
+    nvfetcher # nix fetcher
+    yazi # file manager
   ];
   programs.zsh = {
     enable = true;

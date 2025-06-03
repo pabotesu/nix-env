@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgsUnstable,
+  ...
+}: {
   programs.git = {
     enable = true;
     userName = "pabotesu";
@@ -13,7 +17,7 @@
     
   };
 
-  home.packages = with pkgs; [
+  home.packages = with pkgsUnstable; [
     nodePackages.gitmoji-cli
     ghq
     peco

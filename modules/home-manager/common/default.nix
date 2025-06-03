@@ -15,7 +15,9 @@
     ../programs/google-chrome
     ../programs/raycast
     ../programs/shell
+    ../programs/tailscale
     ../programs/vscode
+    ../programs/wireguard
     ../programs/zellij
   ];
 
@@ -42,8 +44,8 @@
       "wallpaper.jpg" = {
         target = "Library/wallpaper.png";
         source = pkgs.fetchurl {
-          url = "https://r4.wallpaperflare.com/wallpaper/97/833/155/mountains-firewatch-green-forest-wallpaper-5c0e3259b4dddc065048fc083c336564.jpg";
-          sha256 = "sha256-EbzHAqSPD9bR9suBzJVxPEmPLhBmfnaX6cNBucRiBv8=";
+          url = "https://r4.wallpaperflare.com/wallpaper/434/309/126/minimalism-cat-funny-digital-art-artwork-hd-wallpaper-3ffcc20f4d49c558678db28474936070.jpg";
+          sha256 = "sha256-4cIk4Drc0Q/CNSwJiTGVPd4npeV+dtIomONGRrTaWuo=";
         };
       };
     };

@@ -38,6 +38,10 @@
      casks = [
       "1password"
       "desktoppr"
+      "tailscale"
+      "microsoft-remote-desktop"
+      "chatgpt"
+      "wireshark"
      ];
      masApps = {
       "kindle" = 302584613;
@@ -67,6 +71,7 @@
 
   # System settings
   system = {
+    primaryUser = userConfig.name;
     defaults = {
       CustomUserPreferences = {
         NSGlobalDomain."com.apple.mouse.linear" = true;
@@ -148,7 +153,7 @@
       #];
     };
     # The settings will be forcibly reflected without the need to reboot the device.
-    activationScripts.postUserActivation.text = ''
+    activationScripts.activateSettings.text = ''
       # Following line should allow us to avoid a logout/login cycle when changing settings
       /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
       /usr/local/bin/desktoppr /Users/pabotesu/Library/wallpaper.png
@@ -160,12 +165,8 @@
 
   # Fonts configuration
   fonts.packages = with pkgs; [
-    (nerdfonts.override { 
-      fonts = [  
-        "FiraCode" 
-        "DroidSansMono" 
-        ];
-      })
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
   ];
   # Used for backwards compatibility, please read the changelog before changing.
   system.stateVersion = 5;
