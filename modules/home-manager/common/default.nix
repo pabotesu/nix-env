@@ -7,17 +7,15 @@
   ...
 }: {
   imports = [
-    ../programs/aerospace
-    ../programs/alacritty
-    ../programs/discord
+    ../programs/window-manager
+    ../programs/terminal
+    ../programs/social-media
     ../programs/git
     ../programs/web-browser
-    ../programs/raycast
+    ../programs/launcher
     ../programs/shell
-    ../programs/tailscale
-    ../programs/vscode
-    ../programs/wireguard
-    ../programs/zellij
+    ../programs/vpn
+    ../programs/editor
   ];
 
   # Nixpkgs configuration

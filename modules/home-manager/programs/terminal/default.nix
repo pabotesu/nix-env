@@ -86,4 +86,9 @@
         };
     };
   };
+  
+  # Zellij terminal multiplexer
+  imports = [
+    ./zellij
+  ];
 }
