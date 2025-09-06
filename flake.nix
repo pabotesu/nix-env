@@ -22,7 +22,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     # Homebrew
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     #nix-homebrew.url = "git+https://github.com/zhaofengli/nix-homebrew?ref=refs/pull/71/merge";
   };
 

@@ -30,7 +30,7 @@
       tree = "eza --icons --classify=auto --tree";
       nix-direnv = "echo 'use flake' >> .envrc && direnv allow";
     };
-    initExtra = 
+    initContent = 
       ''
         # setup peco & ghq
         function peco-src() {

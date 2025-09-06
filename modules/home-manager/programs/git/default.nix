@@ -18,7 +18,6 @@
   };
 
   home.packages = with pkgsUnstable; [
-    nodePackages.gitmoji-cli
     ghq
     peco
     hub

@@ -9,10 +9,9 @@
   imports = [
     ../programs/aerospace
     ../programs/alacritty
-    ../programs/arc-browser
     ../programs/discord
     ../programs/git
-    ../programs/google-chrome
+    ../programs/web-browser
     ../programs/raycast
     ../programs/shell
     ../programs/tailscale

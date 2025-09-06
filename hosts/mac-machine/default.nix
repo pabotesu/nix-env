@@ -42,6 +42,7 @@
       "microsoft-remote-desktop"
       "chatgpt"
       "wireshark"
+      "orbstack"
      ];
      masApps = {
       "kindle" = 302584613;
