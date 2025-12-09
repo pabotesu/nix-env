@@ -38,21 +38,21 @@
      casks = [
       "1password"
       "desktoppr"
-      "tailscale"
       "microsoft-remote-desktop"
       "chatgpt"
-      "wireshark"
+      "wireshark-app"
       "orbstack"
+      "vivaldi"
      ];
-     masApps = {
-      "kindle" = 302584613;
-     };
      taps = [
        "nikitabobko/tap"
        "dimentium/autoraise"
        "FelixKratz/formulae"
      ];
-     onActivation.cleanup = "zap";
+     onActivation = {
+       cleanup = "zap";
+       autoUpdate = true;
+     };
    };
 
   # Nix settings

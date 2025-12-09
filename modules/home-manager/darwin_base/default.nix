@@ -41,8 +41,8 @@
       "wallpaper.jpg" = {
         target = "Library/wallpaper.png";
         source = pkgs.fetchurl {
-          url = "https://r4.wallpaperflare.com/wallpaper/434/309/126/minimalism-cat-funny-digital-art-artwork-hd-wallpaper-3ffcc20f4d49c558678db28474936070.jpg";
-          sha256 = "sha256-4cIk4Drc0Q/CNSwJiTGVPd4npeV+dtIomONGRrTaWuo=";
+          url = "https://i.imgur.com/p6qt9aE.jpeg";
+          sha256 = "sha256-CXeMJvv4WfJQ/IvNS3z944X9Jv70lQZdHPjRXVUhR40=";
         };
       };
     };

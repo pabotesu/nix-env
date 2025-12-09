@@ -1,6 +1,6 @@
 {nhModules, ...}: {
   imports = [
-    "${nhModules}/common"
+    "${nhModules}/darwin_base"
   ];
 
   # Enable home-manager

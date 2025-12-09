@@ -14,6 +14,7 @@
     nurl # generate nix fetcher
     nvfetcher # nix fetcher
     yazi # file manager
+    bottom # TUI system monitor
   ];
   programs.zsh = {
     enable = true;

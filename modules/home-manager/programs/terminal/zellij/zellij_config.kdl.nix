@@ -1,3 +1,4 @@
+show_startup_tips false
 keybinds clear-defaults=true {
     locked {
         bind "Ctrl g" { SwitchToMode "normal"; }

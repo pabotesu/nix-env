@@ -27,8 +27,8 @@ after-startup-command = [
 # Monitor mapping workspase
 [workspace-to-monitor-force-assignment]
 1 = 'main'
-2 = 1
-3 = 3
+2 = 2
+
 # Key mapping preset
 [key-mapping]
 preset = 'qwerty'
