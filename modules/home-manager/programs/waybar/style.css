@@ -142,7 +142,6 @@
     padding: 3px;
     margin-right: 3px;
     margin-left: 0px;
-    min-width: 25px;
   }
   
   #idle_inhibitor.activated {
