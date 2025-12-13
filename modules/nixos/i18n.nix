@@ -16,5 +16,6 @@
       LC_TELEPHONE = "ja_JP.UTF-8";
       LC_TIME = "ja_JP.UTF-8";
     };
+    inputMethod.fcitx5.waylandFrontend = true;
   };
 }
