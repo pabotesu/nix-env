@@ -31,18 +31,13 @@ env = bitdepth,10
 #       monitor         #
 #-----------------------#
 
-# ---- Thinkpad_x280 monitor ---- # 
-monitor= , 1920x1080@60, 0x0, 1 #
-
-# ---- My Destop Machine Env ---- #
-#monitor=HDMI-A-1 ,2560x1440@100, auto, 1
-#monitor=HDMI-A-2 ,2560x1440@100, auto, 1
+# ---- nix-bookmonitor ---- #
+monitor= , 1920x1080@60, 0x0, 1
 
 #-----------------------#
 #       workspace       #
 #-----------------------#
-workspace = 1, monitor:HDMI-A-1, default:true, persistent:true
-workspace = 2, monitor:HDMI-A-2, default:true, persistent:true
+workspace = 1, monitor:, default:true, persistent:true
 
 #-----------------------#
 #       exec-tools      #
@@ -107,10 +102,12 @@ decoration {
         passes = 1
     }
 
-    drop_shadow = yes
-    shadow_range = 4
-    shadow_render_power = 3
-    col.shadow = rgba(1a1a1aee)
+    shadow {
+        enabled = yes
+        range = 4
+        render_power = 3
+        color = rgba(1a1a1aee)
+    }
 }
 
 animations {
@@ -141,7 +138,9 @@ master {
 
 gestures {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
-    workspace_swipe = off
+    workspace_swipe {
+        enabled = false
+    }
 }
 
 misc {
