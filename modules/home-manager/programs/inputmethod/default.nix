@@ -9,24 +9,6 @@
     fcitx5.waylandFrontend = true;
   };
 
-  # XDG autostart for fcitx5
-  xdg.configFile."autostart/fcitx5.desktop".text = ''
-    [Desktop Entry]
-    Name=Fcitx 5
-    GenericName=Input Method
-    Comment=Start Input Method
-    Exec=fcitx5 -d --replace
-    Icon=fcitx
-    Terminal=false
-    Type=Application
-    Categories=System;Utility;
-    StartupNotify=false
-    X-GNOME-Autostart-Phase=Applications
-    X-GNOME-AutoRestart=false
-    X-GNOME-Autostart-Notify=false
-    X-KDE-autostart-after=panel
-  '';
-
   # fcitx5 configuration
   home.file.".config/fcitx5/profile" = {
     force = true;
