@@ -4,7 +4,7 @@
       layout = [
         {
           label = "lock";
-          action = "hyprctl dispatch exec, hyprlock -f";
+          action = "hyprlock";
           text = "Lock";
           keybind = "l";
         }
