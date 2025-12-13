@@ -44,7 +44,7 @@
         size =
           if pkgs.stdenv.isDarwin
           then 12
-          else 11;
+          else 9;
         normal = {
           family = "FiraCode Nerd Font";
           style = "Regular";
