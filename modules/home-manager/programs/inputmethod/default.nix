@@ -111,7 +111,11 @@ AutoSavePeriod=30
 
 [Notifications]
 # Hidden Notifications
-HiddenNotifications=fcitx5-diagnose
+HiddenNotifications=fcitx-diagnose,fcitx5-diagnose
+
+[Behavior/Notifications]
+# Show Notification After Input Method Changed
+ShowInputMethodChangedNotification=False
     '';
   };
 }
