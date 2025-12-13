@@ -28,8 +28,8 @@
       name = "Flat-Remix-GTK-Blue-Dark";
     };
     iconTheme = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
+      package = pkgs.gnome.gnome-themes-extra;
+      name = "Adwaita-dark";
     };
     gtk2.extraConfig = ''
        gtk-application-prefer-dark-theme = true
