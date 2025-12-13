@@ -21,7 +21,7 @@
     # xwaylandvideobridge  # Removed: KDE Gear 5 and Plasma 5 have reached EOL
     copyq
     cliphist 
-  ]    
+  ]
   ++ [
       inputs.hyprsome.packages.${pkgs.system}.default # workspace manager
     ];
