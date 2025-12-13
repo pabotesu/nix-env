@@ -126,6 +126,10 @@ AllowInputMethodForPassword=False
 ShowPreeditForPassword=False
 # Interval of saving user data in minutes
 AutoSavePeriod=30
+
+[Notifications]
+# Hidden Notifications
+HiddenNotifications=fcitx5-diagnose
     '';
   };
 }
