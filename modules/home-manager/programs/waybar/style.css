@@ -62,7 +62,11 @@
   #idle_inhibitor,
   #idle_inhibitor.activated,
   #tray,
-  #mpd {
+  #mpd,
+  #battery,
+  #backlight,
+  #memory,
+  #temperature {
     padding: 3px 3px;
   }
 
@@ -74,7 +78,11 @@
   #idle_inhibitor,
   #idle_inhibitor.activated,
   #tray,
-  #mpd {
+  #mpd,
+  #battery,
+  #backlight,
+  #memory,
+  #temperature {
     margin: 2px 2px;
   }
   
@@ -147,4 +155,55 @@
   #tray {
     padding-right: 15px;
     border-radius: 3px;
+  }
+
+  #battery {
+    padding: 3px;
+    margin-right: 3px;
+    margin-left: 0px;
+    min-width: 25px;
+  }
+
+  #battery.charging {
+    color: #8ec07c;
+  }
+
+  #battery.warning:not(.charging) {
+    color: #fabd2f;
+  }
+
+  #battery.critical:not(.charging) {
+    color: #fb4934;
+    animation: blink 1s linear infinite;
+  }
+
+  @keyframes blink {
+    to {
+      opacity: 0.5;
+    }
+  }
+
+  #backlight {
+    padding: 3px;
+    margin-right: 3px;
+    margin-left: 0px;
+    min-width: 25px;
+  }
+
+  #memory {
+    padding: 3px;
+    margin-right: 3px;
+    margin-left: 0px;
+    min-width: 25px;
+  }
+
+  #temperature {
+    padding: 3px;
+    margin-right: 3px;
+    margin-left: 0px;
+    min-width: 25px;
+  }
+
+  #temperature.critical {
+    color: #fb4934;
   }
