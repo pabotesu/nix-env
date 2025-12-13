@@ -19,12 +19,11 @@ env = XDG_SESSION_TYPE,wayland
 env = XDG_SESSION_DESKTOP,Hyprland
 env = XDG_CURRENT_DESKTOP,Hyprland
 env = _JAVA_AWT_WM_NONREPARENTING,1
-env = INPUT_METHOD,fcitx
+env = GTK_IM_MODULE,fcitx
 env = QT_IM_MODULE,fcitx
-env = GTK_IM_MODULE,
 env = XMODIFIERS,@im=fcitx
-env = XIM_SERVERS,fcitx
-env = GLFW_IM_MODULE,ibus
+env = SDL_IM_MODULE,fcitx
+env = GLFW_IM_MODULE,fcitx
 env = bitdepth,10
 
 #-----------------------#
