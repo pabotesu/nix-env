@@ -142,13 +142,14 @@
     padding: 3px;
     margin-right: 3px;
     margin-left: 0px;
+    min-width: 20px;
   }
   
   #idle_inhibitor.activated {
     padding: 3px;
     margin-right: 3px;
     margin-left: 0px;
-    min-width: 25px;
+    min-width: 20px;
   }
 
   #tray {
