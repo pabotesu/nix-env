@@ -33,6 +33,7 @@
     self,
     darwin,
     home-manager,
+    hyprsome,
     nix-homebrew,
     nixpkgs,
     nixpkgs-unstable,
