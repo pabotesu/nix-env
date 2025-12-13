@@ -6,6 +6,7 @@
       fcitx5-mozc
       fcitx5-gtk
     ];
+    fcitx5.waylandFrontend = true;
   };
 
   # XDG autostart for fcitx5
