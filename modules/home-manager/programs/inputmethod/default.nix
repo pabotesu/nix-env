@@ -42,7 +42,7 @@ Layout=
     text = ''
 [Hotkey]
 # Trigger Input Method
-TriggerKeys=
+TriggerKeys=Control+space
 # Enumerate when press trigger key repeatedly
 EnumerateWithTriggerKeys=True
 # Temporally switch between first and current Input Method
