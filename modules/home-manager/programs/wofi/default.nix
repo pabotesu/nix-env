@@ -45,6 +45,7 @@
       margin: 15px;
       border: none;
       color: #8abeb7;
+      font-size: 14px;
     }
 
     #entry {
