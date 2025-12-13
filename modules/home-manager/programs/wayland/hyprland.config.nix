@@ -160,7 +160,7 @@ device:epic-mouse-v1 {
 #-----------------------#
 
 # Screenlock
-bind = $mainMod SHIFT, L, exec, hyprlock
+bind = $subMod, L, exec, hyprlock
 
 # Start Launcher
 bind = $mainMod, D, exec, pkill wofi || wofi --show drun -I
@@ -200,16 +200,16 @@ bind = , PRINT, exec, grimblast --notify copy area | wl-paste -t image/png > ~/P
 bind = $mainMod SHIFT, P, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
 
 # Move focus with mainMod + hjkl keys
-bind = $mainMod, h, movefocus, l
-bind = $mainMod, j, movefocus, d
-bind = $mainMod, k, movefocus, u
-bind = $mainMod, l, movefocus, r
+bind = $mainMod, H, movefocus, l
+bind = $mainMod, J, movefocus, d
+bind = $mainMod, K, movefocus, u
+bind = $mainMod, L, movefocus, r
 
 # Move focus with mainMod + hjkl keys
-bind = $mainMod SHIFT, h, movewindow, l
-bind = $mainMod SHIFT, j, movewindow, d
-bind = $mainMod SHIFT, k, movewindow, u
-bind = $mainMod SHIFT, l, movewindow, r
+bind = $mainMod SHIFT, H, movewindow, l
+bind = $mainMod SHIFT, J, movewindow, d
+bind = $mainMod SHIFT, K, movewindow, u
+bind = $mainMod SHIFT, L, movewindow, r
 
 # Switch workspaces with mainMod + [0-9]
 bind = $mainMod, 1, workspace, 1
@@ -254,10 +254,10 @@ bindm = $mainMod, mouse:273, resizewindow
 # Window resize mode
 bind = $mainMod SHIFT, R, submap, resize
 submap = resize
-binde = , right, resizeactive, 10 0
-binde = , left, resizeactive, -10 0
-binde = , up, resizeactive, 0 -10
-binde = , down, resizeactive, 0 10
+binde = , h, resizeactive, 10 0
+binde = , j, resizeactive, -10 0
+binde = , k, resizeactive, 0 -10
+binde = , l, resizeactive, 0 10
 bind = , escape, submap, reset
 submap = reset
 
