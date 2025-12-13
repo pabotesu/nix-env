@@ -22,6 +22,7 @@
     ../programs/xdg
     ../programs/mako
     ../programs/wayland
+    ../programs/inputmethod
   ];
 
   # Nixpkgs configuration
@@ -39,14 +40,5 @@
   home = {
     username = "${userConfig.name}";
     homeDirectory = "/home/${userConfig.name}";
-  };
-
-  # Input method configuration
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-mozc
-      fcitx5-gtk
-    ];
   };
 }
