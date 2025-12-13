@@ -17,7 +17,7 @@
     };
     Service = {
       Type = "simple";
-      ExecStart = "${pkgs.fcitx5-with-addons}/bin/fcitx5";
+      ExecStart = "${pkgs.qt6Packages.fcitx5-with-addons}/bin/fcitx5";
       Restart = "on-failure";
     };
     Install = {
