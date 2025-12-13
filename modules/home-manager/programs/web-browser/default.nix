@@ -3,8 +3,10 @@
   lib,
   ...
 }: {
-  # Ensure Brave browser package installed
-  home.packages = with pkgs; [
-    vivaldi
-  ];
-}
+   programs = {
+     vivaldi = {
+       enable = true;
+       commandLineArgs = ["--enable-features=WebUIDarkMode" "--force-dark-mode"];
+     };
+   };
+ }
