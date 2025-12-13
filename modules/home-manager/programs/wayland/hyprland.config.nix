@@ -138,9 +138,7 @@ master {
 
 gestures {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
-    workspace_swipe {
-        enabled = false
-    }
+    # workspace_swipe is disabled by default in recent versions
 }
 
 misc {
