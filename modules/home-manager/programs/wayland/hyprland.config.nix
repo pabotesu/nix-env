@@ -44,6 +44,7 @@ workspace = 1, monitor:, default:true, persistent:true
 
 exec = /home/pabotesu/.nix-profile/bin/waybar
 exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wayland
+exec-once = systemctl --user start fcitx5
 exec-once = mako # notification tool
 exec-once = hypridle
 exec-once = clipman restore
@@ -52,7 +53,6 @@ exec-once = copyq --start-server
 exec-once = wl-paste --type text --watch cliphist store # Stores only text data
 exec-once = wl-paste --type image --watch cliphist store # Stores only image data
 exec-once = rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob # indicator tool
-exec-once = sleep 2 && fcitx5 -D
 
 
 # Some default env vars.
