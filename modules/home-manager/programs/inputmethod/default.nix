@@ -41,26 +41,38 @@ Layout=
     force = true;
     text = ''
 [Hotkey]
-# Trigger Input Method
-TriggerKeys=Control+space
 # Enumerate when press trigger key repeatedly
 EnumerateWithTriggerKeys=True
-# Temporally switch between first and current Input Method
-AltTriggerKeys=
-# Enumerate Input Method Forward
-EnumerateForwardKeys=
-# Enumerate Input Method Backward
-EnumerateBackwardKeys=
 # Skip first input method while enumerating
 EnumerateSkipFirst=False
-# Toggle embedded preedit
-TogglePreedit=
 
-[Hotkey/EnumerateGroupForwardKeys]
+[Hotkey/TriggerKeys]
 0=Control+space
+1=Zenkaku_Hankaku
 
-[Hotkey/EnumerateGroupBackwardKeys]
-0=Control+Shift+space
+[Hotkey/AltTriggerKeys]
+0=Shift_L
+
+[Hotkey/EnumerateForwardKeys]
+0=Control+Shift_L
+
+[Hotkey/EnumerateBackwardKeys]
+0=Control+Shift_R
+
+[Hotkey/PrevPage]
+0=Up
+
+[Hotkey/NextPage]
+0=Down
+
+[Hotkey/PrevCandidate]
+0=Shift+Tab
+
+[Hotkey/NextCandidate]
+0=Tab
+
+[Hotkey/TogglePreedit]
+0=Control+Alt+P
 
 [Behavior]
 # Active By Default
@@ -78,7 +90,7 @@ CompactInputMethodInformation=True
 # Show first input method information
 ShowFirstInputMethodInformation=True
 # Default page size
-DefaultPageSize=5
+DefaultPageSize=10
 # Override Xkb Option
 OverrideXkbOption=False
 # Custom Xkb Option
@@ -89,6 +101,12 @@ EnabledAddons=
 DisabledAddons=
 # Preload input method to be used by default
 PreloadInputMethod=True
+# Allow input method in the password field
+AllowInputMethodForPassword=False
+# Show preedit text when typing password
+ShowPreeditForPassword=False
+# Interval of saving user data in minutes
+AutoSavePeriod=30
     '';
   };
 }
