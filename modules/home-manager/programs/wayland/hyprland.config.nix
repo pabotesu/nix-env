@@ -190,8 +190,8 @@ bind = SHIFT, XF86AudioLowerVolume, exec, pamixer --default-source -d 10 && pami
 bind = SHIFT, XF86AudioMute, exec, pamixer --default-source -t && ( pamixer --default-source --get-mute && echo 0 > $WOBSOCK ) || pamixer --default-source --get-volume > $WOBSOCK
 
 # Brightness (ThinkPad T14 Gen1: F5/F6)
-bind = , XF86MonBrightnessDown, exec, brightnessctl set 5%- && brightnessctl -m get | awk -F, '{print $4}' > $WOBSOCK
-bind = , XF86MonBrightnessUp, exec, brightnessctl set 5%+ && brightnessctl -m get | awk -F, '{print $4}' > $WOBSOCK
+bind = , XF86MonBrightnessDown, exec, brightnessctl set 5%- && echo $(($(brightnessctl get) * 100 / $(brightnessctl max))) > $WOBSOCK
+bind = , XF86MonBrightnessUp, exec, brightnessctl set 5%+ && echo $(($(brightnessctl get) * 100 / $(brightnessctl max))) > $WOBSOCK
 
 # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
 bind = $mainMod SHIFT, Q, killactive
