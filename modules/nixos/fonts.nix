@@ -5,7 +5,7 @@
       noto-fonts-cjk-sans
       noto-fonts-color-emoji
       migu
-      nerdfonts
+      nerd-fonts.jetbrains-mono
     ];
     fontDir.enable = true;
     fontconfig = {
