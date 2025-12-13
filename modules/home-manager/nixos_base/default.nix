@@ -17,10 +17,10 @@
     ../programs/shell
     ../programs/vpn
     ../programs/editor
-    ../programs/mako
+    ../programs/mako ## notification daemon
     ../programs/gtk
     ../programs/xdg
-    ../programs/notification-center
+    ../programs/mako
     ../programs/wayland
   ];
 
