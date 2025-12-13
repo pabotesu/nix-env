@@ -38,7 +38,9 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${userConfig.name} = {
     isNormalUser = true;
-    description = userConfig.name;    shell = pkgs.zsh;    extraGroups = [ "networkmanager" "wheel" "video" ];
+    description = userConfig.name;   
+    shell = pkgs.zsh;    
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [];
   };
   
