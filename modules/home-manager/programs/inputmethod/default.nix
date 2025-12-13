@@ -8,23 +8,6 @@
     ];
   };
 
-  # fcitx5 systemd service
-  systemd.user.services.fcitx5 = {
-    Unit = {
-      Description = "Fcitx5 input method";
-      After = [ "graphical-session.target" ];
-      PartOf = [ "graphical-session.target" ];
-    };
-    Service = {
-      Type = "simple";
-      ExecStart = "${pkgs.qt6Packages.fcitx5-with-addons}/bin/fcitx5";
-      Restart = "on-failure";
-    };
-    Install = {
-      WantedBy = [ "graphical-session.target" ];
-    };
-  };
-
   # fcitx5 configuration
   home.file.".config/fcitx5/profile" = {
     force = true;
