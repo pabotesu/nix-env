@@ -88,7 +88,55 @@ To add a new machine with a new user to your NixOS or nix-darwin configuration, 
             ./hardware-configuration.nix
             "${nixosModules}/nix_options.nix"
             "${nixosModules}/fonts.nix"
-    2. Add basic home configuration:
+            "${nixosModules}/i18n.nix"
+            "${nixosModules}/inputmethod.nix"
+            "${nixosModules}/network.nix"
+            "${nixosModules}/sound.nix"
+            "${nixosModules}/xserver.nix"
+            "${nixosModules}/windowmanager.nix"
+            "${nixosModules}/displaymanager.nix"
+            "${nixosModules}/inputmethod.nix"
+            "${nixosModules}/security.nix"
+        ];
+
+        # Boot configuration
+        boot.loader.systemd-boot.enable = true;
+        boot.loader.efi.canTouchEfiVariables = true;
+
+        # Add machine-specific configurations here
+        }
+        ```
+
+        > [!IMPORTANT]
+        > For NixOS, you must copy hardware-configuration.nix from your target machine:
+        > 
+        > **On the NixOS machine:**
+        > ```sh
+        > # Generate and display hardware configuration
+        > nixos-generate-config --show-hardware-config > /tmp/hardware-configuration.nix
+        > # Copy it to your dev machine (using scp, USB, etc.)
+        > ```
+        > 
+        > **Then on your dev machine:**
+        > ```sh
+        > # Copy the file to your hosts directory
+        > cp /path/to/hardware-configuration.nix hosts/newmachine/
+        > ```
+        > 
+        > Or generate it directly on the target machine if you're working on it:
+        > ```sh
+        > nixos-generate-config --show-hardware-config > hosts/newmachine/hardware-configuration.nix
+        > ```
+
+3. Create Home Manager Configuration:
+
+    1. Create a new directory for the user's host-specific configuration:
+
+        ```sh
+        mkdir -p home/newuser/newmachine
+        touch home/newuser/newmachine/default.nix
+        ```
+    
 
         🍎 For macOS
         ```nix
@@ -122,30 +170,21 @@ To add a new machine with a new user to your NixOS or nix-darwin configuration, 
             systemd.user.startServices = "sd-switch";
             home.stateVersion = "24.11";
         }
-        ```oot configuration
-        boot.loader.systemd-boot.enable = true;
-        boot.loader.efi.canTouchEfiVariables = true;
-
-        # Add machine-specific configurations here
-        }
         ```
 
-        > [!TIP]
-        > For NixOS, generate hardware-configuration.nix:
-        > ```sh
-        > nixos-generate-config --show-hardware-config > hosts/newmachine/hardware-configuration.nix
-        > ```
+4. Building and Applying Configurations:
 
-3. Create Home Manager Configuration:
-
-    1. Create a new directory for the user's host-specific configuration:
+    1. add new files
 
         ```sh
+        git add .
+        ```
+
     2. Build and switch to the new system configuration:
 
         🍎 For macOS(nix-darwin)
         ```sh
-        darwin-rebuild switch --flake .#newmachine
+        sudo darwin-rebuild switch --flake .#newmachine
         ```
 
         🐧 For NixOS
@@ -162,7 +201,7 @@ To add a new machine with a new user to your NixOS or nix-darwin configuration, 
 > [!TIP]
 > If First Run darwin-rebuild
 > ```sh
-> nix run nix-darwin/master#darwin-rebuild -- switch --flake .#newmachine
+> sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#newmachine
 > ```
 
 > [!TIP]
@@ -176,30 +215,6 @@ To add a new machine with a new user to your NixOS or nix-darwin configuration, 
 > ```sh
 > nix run home-manager -- switch --flake "./#newuser@newmachine"
 > ```
-    2. Build and switch to the new system configuration:
-
-        🍎 For macOS(nix-darwin)
-        ```sh
-        darwin-rebuild switch --flake .#newmachine
-        ```
-
-    3. Build and switch to the new Home Manager configuration:
-
-        ```
-        home-manager switch --flake ./#newuser@newmachine
-        ```
-        
-> [!TIP]
-> If First Run darwin-rebuild
-> ```
-> nix run nix-darwin/master#darwin-rebuild -- switch --flake .#newmachine
-> ```
-
-> [!TIP]
-> If First Run home-manager
-> ```
-> nix run home-manager -- switch --flake "./#newuser@newmachine"
-> ```
 
 ## Updating Flakes
 
@@ -208,3 +223,4 @@ To update all flake inputs to their latest versions:
 nix flake update
 ```
 and rebuild ...
+
