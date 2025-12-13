@@ -39,7 +39,7 @@
   users.users.${userConfig.name} = {
     isNormalUser = true;
     description = userConfig.name;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [];
   };
   
@@ -54,7 +54,10 @@
   ];
 
   # enable ssh
-  services.openssh.enable = true; 
+  services.openssh.enable = true;
+
+  # Enable backlight control
+  programs.light.enable = true;
 
   # Did you read the comment?
   system.stateVersion = "25.11";
