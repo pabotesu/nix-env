@@ -3,18 +3,18 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     # HomeManager
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Darwin
     darwin = {
-      url = "github:LnL7/nix-darwin/nix-darwin-25.05";
+      url = "github:LnL7/nix-darwin/nix-darwin-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -50,7 +50,8 @@
     mkNixosConfiguration = hostname: username:
       nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs outputs hostname;
+          inherit inputs outputs;
+          hostName = hostname;
           userConfig = users.${username};
           nixosModules = "${self}/modules/nixos";
         };
@@ -62,7 +63,8 @@
       darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = {
-          inherit inputs outputs hostname;
+          inherit inputs outputs;
+          hostName = hostname;
           userConfig = users.${username};
         };
         modules = [
@@ -92,7 +94,7 @@
       };
   in {
     nixosConfigurations = {
-      nix-machine = mkNixosConfiguration "nix-machine" "nabokikh";
+      nix-book = mkNixosConfiguration "nix-book" "pabotesu";
     };
 
     darwinConfigurations = {
@@ -101,7 +103,7 @@
 
     homeConfigurations = {
       "pabotesu@mac-machine" = mkHomeConfiguration "aarch64-darwin" "pabotesu" "mac-machine" "onehalf";
-      #"pabotesu@nix-machine" = mkHomeConfiguration "x86_64-linux" "pabotesu" "nix-machine" "onehalf";
+      "pabotesu@nix-book" = mkHomeConfiguration "x86_64-linux" "pabotesu" "nix-book" "onehalf";
     };
 
     overlays = import ./overlays {inherit inputs;};

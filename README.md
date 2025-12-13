@@ -38,13 +38,24 @@ To add a new machine with a new user to your NixOS or nix-darwin configuration, 
         newmachine = mkDarwinConfiguration "newmachine" "newuser";
         };
         ```
+
+        🐧 For NixOS
+        ```nix
+        nixosConfigurations = {
+        # Existing configurations...
+        newmachine = mkNixosConfiguration "newmachine" "newuser";
+        };
+        ```
     
     3. Add the new home configuration:
 
         ```nix
         homeConfigurations = {
         # Existing configurations...
-        "newuser@newmachine" = mkHomeConfiguration "x86_64-linux" "newuser" "newmachine";
+        # For macOS
+        "newuser@newmachine" = mkHomeConfiguration "aarch64-darwin" "newuser" "newmachine" "onehalf";
+        # For NixOS (x86_64)
+        "newuser@newmachine" = mkHomeConfiguration "x86_64-linux" "newuser" "newmachine" "onehalf";
         };
         ```
 2. Create System Configuration:
@@ -61,42 +72,110 @@ To add a new machine with a new user to your NixOS or nix-darwin configuration, 
         ```
     3. Add the basic configuration to default.nix:
 
+        🍎 For macOS(nix-darwin)
         ```nix
-        { config, pkgs, more_your_elements... }:
+        { config, pkgs, ... }:
         {
         # Add machine-specific configurations here
         }
         ```
+
+        🐧 For NixOS
+        ```nix
+        { config, pkgs, nixosModules, ... }:
+        {
+        imports = [
+            ./hardware-configuration.nix
+            "${nixosModules}/nix_options.nix"
+            "${nixosModules}/fonts.nix"
+    2. Add basic home configuration:
+
+        🍎 For macOS
+        ```nix
+        { nhModules, ... }:
+        {
+            imports = [
+                "${nhModules}/darwin_base"
+            ];
+
+            programs.home-manager.enable = true;
+
+            home.sessionPath = [
+                "/opt/homebrew/bin/"
+            ];
+
+            systemd.user.startServices = "sd-switch";
+            home.stateVersion = "24.11";
+        }
+        ```
+
+        🐧 For NixOS
+        ```nix
+        { nhModules, ... }:
+        {
+            imports = [
+                "${nhModules}/nixos_base"
+            ];
+
+            programs.home-manager.enable = true;
+
+            systemd.user.startServices = "sd-switch";
+            home.stateVersion = "24.11";
+        }
+        ```oot configuration
+        boot.loader.systemd-boot.enable = true;
+        boot.loader.efi.canTouchEfiVariables = true;
+
+        # Add machine-specific configurations here
+        }
+        ```
+
+        > [!TIP]
+        > For NixOS, generate hardware-configuration.nix:
+        > ```sh
+        > nixos-generate-config --show-hardware-config > hosts/newmachine/hardware-configuration.nix
+        > ```
 
 3. Create Home Manager Configuration:
 
     1. Create a new directory for the user's host-specific configuration:
 
         ```sh
-        mkdir -p home/newuser/newmachine
-        touch home/newuser/newmachine/default.nix
-        ```
-    
-    2. Add basic home configuration:
+    2. Build and switch to the new system configuration:
 
-        ```nix
-        { nhModules, ... }:
-        {
-            imports = [
-                "${nhModules}/common"
-                # and more ...
-            ];
-        }
+        🍎 For macOS(nix-darwin)
+        ```sh
+        darwin-rebuild switch --flake .#newmachine
         ```
 
-4. Building and Applying Configurations:
+        🐧 For NixOS
+        ```sh
+        sudo nixos-rebuild switch --flake .#newmachine
+        ```
 
-    1. add new files
+    3. Build and switch to the new Home Manager configuration:
 
         ```sh
-        git add .
+        home-manager switch --flake ./#newuser@newmachine
         ```
+        
+> [!TIP]
+> If First Run darwin-rebuild
+> ```sh
+> nix run nix-darwin/master#darwin-rebuild -- switch --flake .#newmachine
+> ```
 
+> [!TIP]
+> If First Run nixos-rebuild (on NixOS)
+> ```sh
+> sudo nixos-rebuild switch --flake .#newmachine
+> ```
+
+> [!TIP]
+> If First Run home-manager
+> ```sh
+> nix run home-manager -- switch --flake "./#newuser@newmachine"
+> ```
     2. Build and switch to the new system configuration:
 
         🍎 For macOS(nix-darwin)
