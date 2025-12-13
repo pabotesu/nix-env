@@ -19,11 +19,8 @@ env = XDG_SESSION_TYPE,wayland
 env = XDG_SESSION_DESKTOP,Hyprland
 env = XDG_CURRENT_DESKTOP,Hyprland
 env = _JAVA_AWT_WM_NONREPARENTING,1
-env = GTK_IM_MODULE,fcitx
-env = QT_IM_MODULE,fcitx
 env = XMODIFIERS,@im=fcitx
-env = SDL_IM_MODULE,fcitx
-env = GLFW_IM_MODULE,fcitx
+env = QT_IM_MODULE,fcitx
 env = bitdepth,10
 
 #-----------------------#
@@ -43,7 +40,7 @@ workspace = 1, monitor:, default:true, persistent:true
 #-----------------------#
 
 exec = /home/pabotesu/.nix-profile/bin/waybar
-exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wayland GTK_IM_MODULE QT_IM_MODULE XMODIFIERS SDL_IM_MODULE GLFW_IM_MODULE
+exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XMODIFIERS QT_IM_MODULE
 exec-once = mako # notification tool
 exec-once = hypridle
 exec-once = clipman restore
@@ -52,7 +49,7 @@ exec-once = copyq --start-server
 exec-once = wl-paste --type text --watch cliphist store # Stores only text data
 exec-once = wl-paste --type image --watch cliphist store # Stores only image data
 exec-once = rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob # indicator tool
-exec-once = fcitx5 -D -r
+exec-once = fcitx5 -d --replace
 
 
 # Some default env vars.
