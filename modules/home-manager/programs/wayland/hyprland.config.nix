@@ -39,7 +39,7 @@ workspace = 1, monitor:, default:true, persistent:true
 #       exec-tools      #
 #-----------------------#
 
-exec = /home/pabotesu/.nix-profile/bin/waybar
+exec-once = /home/pabotesu/.nix-profile/bin/waybar
 exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XMODIFIERS QT_IM_MODULE
 exec-once = mako # notification tool
 exec-once = hypridle
