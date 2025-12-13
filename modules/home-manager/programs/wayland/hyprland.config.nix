@@ -43,9 +43,9 @@ workspace = 1, monitor:, default:true, persistent:true
 #-----------------------#
 
 exec = /home/pabotesu/.nix-profile/bin/waybar
+exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wayland
 exec-once = fcitx5 -D
 exec-once = mako # notification tool
-exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wayland
 exec-once = hypridle
 exec-once = clipman restore
 exec-once = exec wl-paste -t text --watch clipman store
