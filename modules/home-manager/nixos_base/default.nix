@@ -23,6 +23,7 @@
     ../programs/mako
     ../programs/wayland
     ../programs/inputmethod
+    ../programs/network-manager
   ];
 
   # Nixpkgs configuration

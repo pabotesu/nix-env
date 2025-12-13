@@ -50,6 +50,7 @@ exec-once = wl-paste --type text --watch cliphist store # Stores only text data
 exec-once = wl-paste --type image --watch cliphist store # Stores only image data
 exec-once = rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob # indicator tool
 exec-once = fcitx5 -D --replace
+exec-once = nm-applet --indicator # NetworkManager system tray
 
 
 # Some default env vars.
