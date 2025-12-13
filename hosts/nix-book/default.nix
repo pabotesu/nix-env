@@ -38,8 +38,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${userConfig.name} = {
     isNormalUser = true;
-    description = userConfig.name;   
-    shell = pkgs.zsh;    
+    description = userConfig.name;    
     extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [];
   };
@@ -56,6 +55,9 @@
 
   # enable ssh
   services.openssh.enable = true;
+
+  # Enable zsh
+  programs.zsh.enable = true;
 
   # Enable backlight control
   programs.light.enable = true;
