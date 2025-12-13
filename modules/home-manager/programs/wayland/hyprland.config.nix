@@ -199,17 +199,17 @@ bind = , PRINT, exec, grimblast --notify copy area | wl-paste -t image/png > ~/P
 #bind = $mainMod SHIFT, P, exec, clipman pick -t wofi
 bind = $mainMod SHIFT, P, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
 
-# Move focus with mainMod + arrow keys
-bind = $mainMod, left, movefocus, l
-bind = $mainMod, right, movefocus,r
-bind = $mainMod, up, movefocus, u
-bind = $mainMod, down, movefocus, d
+# Move focus with mainMod + hjkl keys
+bind = $mainMod, h, movefocus, l
+bind = $mainMod, j, movefocus, d
+bind = $mainMod, k, movefocus, u
+bind = $mainMod, l, movefocus, r
 
-# Move focus with mainMod + arrow keys
-bind = $mainMod SHIFT, left, movewindow, l
-bind = $mainMod SHIFT, right, movewindow,r
-bind = $mainMod SHIFT, up, movewindow, u
-bind = $mainMod SHIFT, down, movewindow, d
+# Move focus with mainMod + hjkl keys
+bind = $mainMod SHIFT, h, movewindow, l
+bind = $mainMod SHIFT, j, movewindow, d
+bind = $mainMod SHIFT, k, movewindow, u
+bind = $mainMod SHIFT, l, movewindow, r
 
 # Switch workspaces with mainMod + [0-9]
 bind = $mainMod, 1, workspace, 1
