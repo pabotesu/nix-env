@@ -3,28 +3,27 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { 
+  config,
   pkgs,
   outputs,
   userConfig,
   hostName,
+  nixosModules,
   ...
 }: {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      
-      ../../modules/nios/diplaymanager.nix
-      ../../modules/nios/fonts.nix
-      ../../modules/nios/i18n.nix
-      ../../modules/nios/inputmethod.nix
-      ../../modules/nios/networkmanager.nix
-      ../../modules/nios/nix_options.nix
-      ../../modules/nios/security.nix
-      ../../modules/nixos/sound.nix
-      ../../modules/nixos/windowmanager.nix
-      ../../modules/nixos/xserver.nix
-
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    "${nixosModules}/nix_options.nix"
+    "${nixosModules}/fonts.nix"
+    "${nixosModules}/i18n.nix"
+    "${nixosModules}/inputmethod.nix"
+    "${nixosModules}/network.nix"
+    "${nixosModules}/security.nix"
+    "${nixosModules}/sound.nix"
+    "${nixosModules}/windowmanager.nix"
+    "${nixosModules}/xserver.nix"
+    "${nixosModules}/displaymanager.nix"
+  ];
 
   boot = {
     loader = {
