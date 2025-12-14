@@ -1,4 +1,7 @@
 {
+  # Enable fingerprint reader
+  services.fprintd.enable = true;
+
   services.gnome.gnome-keyring.enable = true;
   programs.seahorse.enable = true;
   security = {
@@ -7,5 +10,10 @@
 
     # wayland display lockers (e.g. swaylock) needs this
     pam.services.swaylock.text = "auth include login";
+    
+    # Enable fingerprint authentication
+    pam.services.login.fprintAuth = true;
+    pam.services.sudo.fprintAuth = true;
+    pam.services.hyprlock.fprintAuth = true;
   };
 }
