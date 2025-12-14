@@ -61,6 +61,13 @@
   # Enable zsh
   programs.zsh.enable = true;
 
+  # Enable 1Password
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "${userConfig.name}" ];
+  };
+
   # Did you read the comment?
   system.stateVersion = "25.11";
 }
