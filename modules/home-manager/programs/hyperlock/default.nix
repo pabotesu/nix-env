@@ -53,7 +53,7 @@
     }
     label { # lock icon
         monitor =
-        text =  LOCKed
+        text =  ""
         shadow_passes = 1
         shadow_boost = 0.5
         color = $text_color
