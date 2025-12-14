@@ -14,7 +14,7 @@
       }
       
       window#waybar {
-        background-color: ${envTheme.bg}80;
+        background-color: rgba(40, 44, 52, 0.5);
         color: ${envTheme.fg};
         transition-property: background-color;
         transition-duration: 0.5s;
