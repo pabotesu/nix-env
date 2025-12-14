@@ -15,23 +15,14 @@
   # Enable backlight control
   programs.light.enable = true;
 
-  # Allow backlight control without sudo (including on ly login screen)
+  # Allow backlight control without sudo
+  # Ly uses brightnessctl internally for backlight control
   services.udev.extraRules = ''
-    ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="*", RUN+="${pkgs.coreutils}/bin/chmod 666 /sys/class/backlight/%k/brightness"
+    SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="*", RUN+="${pkgs.coreutils}/bin/chmod 0666 /sys/class/backlight/%k/brightness"
   '';
 
-  # Handle backlight keys at system level (works on ly login screen)
-  services.acpid = {
-    enable = true;
-    handlers = {
-      brightnessDown = {
-        event = "video/brightnessdown.*";
-        action = "${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
-      };
-      brightnessUp = {
-        event = "video/brightnessup.*";
-        action = "${pkgs.brightnessctl}/bin/brightnessctl set 5%+";
-      };
-    };
-  };
+  # Ensure brightnessctl is available system-wide for ly
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+  ];
 }
