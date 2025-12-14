@@ -60,8 +60,8 @@
         }
         
         button:focus, button:active, button:hover {
-          background-color: ${envTheme.fg};
-          color: ${envTheme.bg};
+          background-color: ${envTheme.bg};
+          color: ${envTheme.fg};
           border-color: ${envTheme.cyan};
           outline-style: none;
         }
