@@ -34,6 +34,11 @@
         }
       ];
       style = ''
+        * {
+          background-image: none;
+          box-shadow: none;
+        }
+        
         window {
           background-color: ${envTheme.bg}ee;
         }
@@ -43,26 +48,22 @@
           border-radius: 10px;
           border: 3px solid ${envTheme.green};
           margin: 15px;
+          text-decoration-color: ${envTheme.fg};
+          color: ${envTheme.fg};
+          border-style: solid;
           background-repeat: no-repeat;
           background-position: center;
           background-size: 40%;
-          color: ${envTheme.fg};
           font-size: 16px;
           min-width: 150px;
           min-height: 150px;
         }
         
-        button:hover {
-          background-color: ${envTheme.blue}33;
-          border: 2px solid ${envTheme.blue};
-        }
-        
-        button:focus, button:active {
+        button:focus, button:active, button:hover {
           background-color: ${envTheme.fg};
-          border: 3px solid ${envTheme.blue};
           color: ${envTheme.bg};
-          outline: 2px solid ${envTheme.green};
-          outline-offset: 2px;
+          border: 3px solid ${envTheme.blue};
+          outline-style: none;
         }
         
         #lock {
