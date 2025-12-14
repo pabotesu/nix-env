@@ -40,21 +40,21 @@
         }
         
         window {
-          background-color: ${envTheme.bg}ee;
+          background-color: rgba(40, 44, 52, 0.9);
         }
         
         button {
-          background-color: ${envTheme.bg};
           border-radius: 10px;
-          border: 3px solid ${envTheme.green};
-          margin: 15px;
+          border-color: ${envTheme.green};
           text-decoration-color: ${envTheme.fg};
           color: ${envTheme.fg};
+          background-color: ${envTheme.bg};
           border-style: solid;
+          border-width: 3px;
           background-repeat: no-repeat;
           background-position: center;
           background-size: 40%;
-          font-size: 16px;
+          margin: 15px;
           min-width: 150px;
           min-height: 150px;
         }
@@ -62,7 +62,7 @@
         button:focus, button:active, button:hover {
           background-color: ${envTheme.fg};
           color: ${envTheme.bg};
-          border: 3px solid ${envTheme.blue};
+          border-color: ${envTheme.blue};
           outline-style: none;
         }
         
