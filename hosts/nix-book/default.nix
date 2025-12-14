@@ -20,6 +20,7 @@
     "${nixosModules}/network.nix"
     "${nixosModules}/security.nix"
     "${nixosModules}/sound.nix"
+    "${nixosModules}/bluetooth.nix"
     "${nixosModules}/windowmanager.nix"
     "${nixosModules}/xserver.nix"
     "${nixosModules}/displaymanager.nix"
