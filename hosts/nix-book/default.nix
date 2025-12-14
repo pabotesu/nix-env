@@ -60,9 +60,6 @@
   # Enable zsh
   programs.zsh.enable = true;
 
-  # Enable backlight control
-  programs.light.enable = true;
-
   # Did you read the comment?
   system.stateVersion = "25.11";
 }

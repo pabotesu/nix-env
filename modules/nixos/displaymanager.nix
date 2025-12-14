@@ -11,4 +11,13 @@
       animation = "matrix";
     };
   };
+
+  # Enable backlight control
+  programs.light.enable = true;
+
+  # Allow backlight control without sudo (including on ly login screen)
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
+    ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
+  '';
 }
