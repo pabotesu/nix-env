@@ -58,8 +58,9 @@
         }
         
         button:focus {
-          background-color: ${envTheme.blue}4d;
+          background-color: ${envTheme.fg};
           border: 2px solid ${envTheme.blue};
+          color: ${envTheme.bg};
         }
         
         #lock {
