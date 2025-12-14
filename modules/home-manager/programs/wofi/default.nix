@@ -55,7 +55,7 @@
     }
 
     #entry:selected {
-      background-color: ${envTheme.blue};
+      background-color: ${envTheme.fg};
       border: none; 
       outline-style: none;
     }
