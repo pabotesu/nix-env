@@ -54,7 +54,8 @@
           background-repeat: no-repeat;
           background-position: center;
           background-size: 40%;
-          margin: 15px;
+          margin: 10px;
+          padding: 10px;
           min-width: 150px;
           min-height: 150px;
         }
