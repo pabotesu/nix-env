@@ -162,7 +162,7 @@ bind = $subMod, L, exec, hyprlock
 
 # Start Launcher
 bind = $mainMod, D, exec, pkill wofi || wofi --show drun -I
-bind = $mainMod SHIFT, E, exec, pkill wlogout || wlogout -b 5
+bind = $mainMod SHIFT, E, exec, pkill wlogout || wlogout -b 5 -C ~/.config/wlogout/style.css
 
 # Start Terminal
 bind = $mainMod, Return,  exec, alacritty
