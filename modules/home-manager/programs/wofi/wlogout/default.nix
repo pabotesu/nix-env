@@ -27,10 +27,5 @@
           keybind = "r";
         }
       ];
-      style = ''
-        button {
-          pointer-events: none;
-        }
-      '';
   };
 }
