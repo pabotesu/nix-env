@@ -45,9 +45,11 @@
           margin: 15px;
           background-repeat: no-repeat;
           background-position: center;
-          background-size: 25%;
+          background-size: 40%;
           color: #c5c8c6;
           font-size: 16px;
+          min-width: 150px;
+          min-height: 150px;
         }
         
         button:hover {
@@ -58,6 +60,26 @@
         button:focus {
           background-color: rgba(80, 84, 92, 1);
           border: 2px solid #c5c8c6;
+        }
+        
+        #lock {
+          background-image: url("${pkgs.wlogout}/share/wlogout/icons/lock.png");
+        }
+        
+        #logout {
+          background-image: url("${pkgs.wlogout}/share/wlogout/icons/logout.png");
+        }
+        
+        #shutdown {
+          background-image: url("${pkgs.wlogout}/share/wlogout/icons/shutdown.png");
+        }
+        
+        #reboot {
+          background-image: url("${pkgs.wlogout}/share/wlogout/icons/reboot.png");
+        }
+        
+        #suspend {
+          background-image: url("${pkgs.wlogout}/share/wlogout/icons/suspend.png");
         }
       '';
   };
