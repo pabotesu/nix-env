@@ -44,7 +44,7 @@
         shadow_passes = 1
         shadow_boost = 0.5
         color = $text_color
-        font_size = 240
+        font_size = 160
         font_family = $font_family_clock
 
         position = 0, 300
