@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{envTheme, pkgs, ...}: {
   imports = [
     ./wlogout
   ];
@@ -11,8 +11,8 @@
 
     window {
       margin: 0px;
-      border: 4px solid #373b41;
-      background-color: #1d1f21;
+      border: 4px solid ${envTheme.blue};
+      background-color: ${envTheme.bg};
       border-radius: 5;
     }
 
@@ -20,20 +20,20 @@
       margin: 5px;
       padding: 5px;
       border: none;
-      color: #8abeb7;
-      background-color: #282a2e;
+      color: ${envTheme.cyan};
+      background-color: ${envTheme.black};
     }
 
     #inner-box {
       margin: 5px;
       border: none;
-      background-color: #282a2e;
+      background-color: ${envTheme.black};
     }
 
     #outer-box {
       margin: 5px;
       border: none;
-      background-color: #1d1f21;
+      background-color: ${envTheme.bg};
     }
 
     #scroll {
@@ -44,21 +44,21 @@
     #text {
       margin: 15px;
       border: none;
-      color: #8abeb7;
+      color: ${envTheme.cyan};
       font-size: 14px;
     }
 
     #entry {
       margin: 5px;
-      background-color: #282a2e;
+      background-color: ${envTheme.black};
       border: none; 
     }
 
     #entry:selected {
-      background-color: #373b41;
+      background-color: ${envTheme.blue};
       border: none; 
       outline-style: none;
-      color: #c5c8c6;
+      color: ${envTheme.fg};
     }
   '';
 }

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{envTheme, pkgs, ...}: {
   programs.wlogout = {
       enable = true;
       layout = [
@@ -35,31 +35,31 @@
       ];
       style = ''
         window {
-          background-color: rgba(29, 31, 33, 0.95);
+          background-color: ${envTheme.bg}ee;
         }
         
         button {
-          background-color: rgba(40, 44, 52, 0.8);
+          background-color: ${envTheme.bg};
           border-radius: 10px;
-          border: 2px solid rgba(197, 200, 198, 0.3);
+          border: 2px solid ${envTheme.fg}4d;
           margin: 15px;
           background-repeat: no-repeat;
           background-position: center;
           background-size: 40%;
-          color: #c5c8c6;
+          color: ${envTheme.fg};
           font-size: 16px;
           min-width: 150px;
           min-height: 150px;
         }
         
         button:hover {
-          background-color: rgba(60, 64, 72, 0.9);
-          border: 2px solid rgba(197, 200, 198, 0.6);
+          background-color: ${envTheme.blue}33;
+          border: 2px solid ${envTheme.blue};
         }
         
         button:focus {
-          background-color: rgba(80, 84, 92, 1);
-          border: 2px solid #c5c8c6;
+          background-color: ${envTheme.blue}4d;
+          border: 2px solid ${envTheme.blue};
         }
         
         #lock {
