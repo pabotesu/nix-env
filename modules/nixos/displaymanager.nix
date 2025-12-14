@@ -14,12 +14,7 @@
 
   # Enable backlight control
   programs.light.enable = true;
-
-  # Allow backlight control without sudo
-  # Ly uses brightnessctl internally for backlight control
-  services.udev.extraRules = ''
-    SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="*", RUN+="${pkgs.coreutils}/bin/chmod 0666 /sys/class/backlight/%k/brightness"
-  '';
+  hardware.brightness.enable = true;
 
   # Ensure brightnessctl is available system-wide for ly
   environment.systemPackages = with pkgs; [
