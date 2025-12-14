@@ -57,23 +57,6 @@
   #cpu,
   #network,
   #pulseaudio,
-  #tray,
-  #mode,
-  #idle_inhibitor,
-  #idle_inhibitor.activated,
-  #tray,
-  #mpd,
-  #battery,
-  #backlight,
-  #memory,
-  #temperature {
-    padding: 3px 3px;
-  }
-
-  #clock,
-  #cpu,
-  #network,
-  #pulseaudio,
   #custom-pacman,
   #idle_inhibitor,
   #idle_inhibitor.activated,
@@ -83,7 +66,9 @@
   #backlight,
   #memory,
   #temperature {
-    margin: 2px 2px;
+    margin: 2px 5px;
+    padding: 3px 8px;
+    border-radius: 3px;
   }
   
   #window,
@@ -102,10 +87,6 @@
   }
   
   #clock {
-    color: #c5c8c6;
-    border-radius: 3px;
-    margin-right: 0px;
-    margin-left: 0px;
     font-size: 16px;
   }
   
@@ -116,53 +97,6 @@
   
   #workspaces {
     padding: 0 0px;
-  }
-  
-  #cpu {
-    padding: 3px;
-    margin-right: 3px;
-    margin-left: 0px;
-    min-width: 25px;
-  }
-  
-  #network {
-    padding: 3px;
-    margin-right: 3px;
-    margin-left: 0px;
-    min-width: 25px;
-  }
-  
-  #pulseaudio {
-    padding: 3px;
-    margin-right: 3px;
-    margin-left: 0px;
-    min-width: 25px;
-  }
-  
-  #tray {
-    padding-right: 5px;
-    border-radius: 3px;
-  }
-
-  #idle_inhibitor {
-    padding: 3px;
-    margin-right: 3px;
-    margin-left: 3px;
-    min-width: 20px;
-  }
-  
-  #idle_inhibitor.activated {
-    padding: 3px;
-    margin-right: 3px;
-    margin-left: 3px;
-    min-width: 20px;
-  }
-
-  #battery {
-    padding: 3px;
-    margin-right: 3px;
-    margin-left: 0px;
-    min-width: 25px;
   }
 
   #battery.charging {
@@ -182,27 +116,6 @@
     to {
       opacity: 0.5;
     }
-  }
-
-  #backlight {
-    padding: 3px;
-    margin-right: 3px;
-    margin-left: 0px;
-    min-width: 25px;
-  }
-
-  #memory {
-    padding: 3px;
-    margin-right: 3px;
-    margin-left: 0px;
-    min-width: 25px;
-  }
-
-  #temperature {
-    padding: 3px;
-    margin-right: 3px;
-    margin-left: 0px;
-    min-width: 25px;
   }
 
   #temperature.critical {
