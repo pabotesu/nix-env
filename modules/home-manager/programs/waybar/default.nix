@@ -64,6 +64,7 @@
       #network,
       #pulseaudio,
       #custom-pacman,
+      #custom-microphone,
       #idle_inhibitor,
       #idle_inhibitor.activated,
       #tray,
