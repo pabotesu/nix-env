@@ -58,6 +58,7 @@
       background-color: ${envTheme.fg};
       border: none; 
       outline-style: none;
+      color: ${envTheme.bg};
     }
     
     #entry:selected #text {
