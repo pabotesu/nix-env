@@ -49,6 +49,7 @@ exec-once = rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob # indica
 exec-once = fcitx5 -D --replace
 exec-once = nm-applet --indicator # NetworkManager system tray
 exec-once = blueman-applet # Bluetooth system tray
+exec-once = /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1 # Polkit authentication for 1Password
 
 
 # Some default env vars.
