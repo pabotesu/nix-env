@@ -41,7 +41,7 @@
         button {
           background-color: ${envTheme.bg};
           border-radius: 10px;
-          border: 2px solid ${envTheme.cyan};
+          border: 3px solid ${envTheme.green};
           margin: 15px;
           background-repeat: no-repeat;
           background-position: center;
