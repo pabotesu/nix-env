@@ -40,7 +40,7 @@
         }
         
         window {
-          background-color: rgba(40, 44, 52, 0.9);
+          background-color: transparent;
         }
         
         button {
