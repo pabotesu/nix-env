@@ -53,11 +53,11 @@
     }
     label { # lock icon
         monitor =
-        text =  ""
+        text =  
         shadow_passes = 1
         shadow_boost = 0.5
         color = $text_color
-        font_size = 25
+        font_size = 30
         font_family = $font_material_symbols
 
         position = 0, 65
