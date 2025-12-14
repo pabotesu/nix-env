@@ -5,7 +5,7 @@
   home.packages = with pkgs; [wofi wofi-emoji];
   home.file.".config/wofi/style.css".text = ''
     * {
-      font-family: Nova Flat;
+      font-family: PlemolJP Console NF, Roboto Nerd, FiraCode Nerd Font;
       font-size: 20;
     }
 

@@ -44,6 +44,7 @@
         }
         
         button {
+          font-family: PlemolJP Console NF, Roboto Nerd, FiraCode Nerd Font;
           border-radius: 10px;
           border-color: ${envTheme.black};
           text-decoration-color: ${envTheme.fg};

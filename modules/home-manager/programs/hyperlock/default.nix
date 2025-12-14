@@ -11,9 +11,9 @@
     $entry_background_color = ${envTheme.black}11
     $entry_border_color = ${envTheme.blue}55
     $entry_color = ${envTheme.fg}
-    $font_family = JetBrainsMono Nerd Font
-    $font_family_clock = JetBrainsMono Nerd Font
-    $font_material_symbols = JetBrainsMono Nerd Font
+    $font_family = PlemolJP Console NF
+    $font_family_clock = PlemolJP Console NF
+    $font_material_symbols = PlemolJP Console NF
 
     background {
         color = ${envTheme.bg}
