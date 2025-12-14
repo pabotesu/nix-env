@@ -48,7 +48,6 @@ exec-once = wl-paste --type image --watch cliphist store # Stores only image dat
 exec-once = rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob # indicator tool
 exec-once = fcitx5 -D --replace
 exec-once = nm-applet --indicator # NetworkManager system tray
-exec-once = pamixer --default-source -u # Unmute microphone on startup
 
 
 # Some default env vars.
