@@ -162,7 +162,7 @@ bind = $subMod, L, exec, hyprlock
 
 # Start Launcher
 bind = $mainMod, D, exec, pkill wofi || wofi --show drun -I
-bind = $mainMod SHIFT, E, exec, pkill wlogout || wlogout -b 4
+bind = $mainMod SHIFT, E, exec, pkill wlogout || wlogout --no-mouse -b 4
 
 # Start Terminal
 bind = $mainMod, Return,  exec, alacritty
