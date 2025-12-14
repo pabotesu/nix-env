@@ -42,7 +42,7 @@
       }
      
       #workspaces button.active {
-        background-color: ${envTheme.blue};
+        background-color: ${envTheme.fg};
         color: ${envTheme.bg};
         border-radius: 5px;
         margin:5px 5px;
