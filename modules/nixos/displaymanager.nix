@@ -20,4 +20,19 @@
     ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
     ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
   '';
+
+  # Handle backlight keys at system level (works on ly login screen)
+  services.acpid = {
+    enable = true;
+    handlers = {
+      brightnessDown = {
+        event = "video/brightnessdown.*";
+        action = "${pkgs.light}/bin/light -U 5";
+      };
+      brightnessUp = {
+        event = "video/brightnessup.*";
+        action = "${pkgs.light}/bin/light -A 5";
+      };
+    };
+  };
 }
