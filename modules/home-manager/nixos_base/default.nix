@@ -17,6 +17,7 @@
     ../programs/shell
     ../programs/vpn
     ../programs/editor
+    ../programs/secrets
     ../programs/mako ## notification daemon
     ../programs/gtk
     ../programs/xdg
