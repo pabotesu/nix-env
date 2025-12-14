@@ -57,8 +57,6 @@
           margin: 15px;
           min-width: 150px;
           min-height: 150px;
-          max-width: 150px;
-          max-height: 150px;
         }
         
         button:focus, button:active, button:hover {
