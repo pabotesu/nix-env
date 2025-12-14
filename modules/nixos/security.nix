@@ -15,5 +15,6 @@
     pam.services.login.fprintAuth = true;
     pam.services.sudo.fprintAuth = true;
     pam.services.hyprlock.fprintAuth = true;
+    pam.services.polkit-1.fprintAuth = true;
   };
 }
