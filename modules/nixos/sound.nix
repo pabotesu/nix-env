@@ -7,12 +7,15 @@
     alsa.support32Bit = true;
     jack.enable = true;
     pulse.enable = true;
+    # Bluetooth audio support
+    wireplumber.enable = true;
   };
 
-  programs.noisetorch.enable = true;
-  
+  # Enable Bluetooth audio codecs
   environment.systemPackages = with pkgs; [
    pavucontrol
    pamixer
   ];
+
+  programs.noisetorch.enable = true;
 }
