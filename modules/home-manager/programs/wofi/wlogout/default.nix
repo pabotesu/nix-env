@@ -59,8 +59,10 @@
         
         button:focus {
           background-color: ${envTheme.fg};
-          border: 2px solid ${envTheme.blue};
+          border: 3px solid ${envTheme.blue};
           color: ${envTheme.bg};
+          outline: 2px solid ${envTheme.green};
+          outline-offset: 2px;
         }
         
         #lock {
