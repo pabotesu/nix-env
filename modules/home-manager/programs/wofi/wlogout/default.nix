@@ -45,7 +45,7 @@
         
         button {
           border-radius: 10px;
-          border-color: ${envTheme.green};
+          border-color: ${envTheme.black};
           text-decoration-color: ${envTheme.fg};
           color: ${envTheme.fg};
           background-color: ${envTheme.bg};
@@ -62,7 +62,7 @@
         button:focus, button:active, button:hover {
           background-color: ${envTheme.fg};
           color: ${envTheme.bg};
-          border-color: ${envTheme.blue};
+          border-color: ${envTheme.cyan};
           outline-style: none;
         }
         
