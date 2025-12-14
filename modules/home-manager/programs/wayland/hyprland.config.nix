@@ -193,9 +193,8 @@ bind = $mainMod SHIFT, Q, killactive
 # Screen Shot
 bind = , PRINT, exec, grimblast --notify copy area | wl-paste -t image/png > ~/Pictures/Screenshots/$(date "+%Y%m%d-%H%M%S")'_grim_area.png'
 
-# Clipman
-#bind = $mainMod SHIFT, P, exec, clipman pick -t wofi
-bind = $mainMod SHIFT, P, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
+# Clipboard History
+bind = $mainMod SHIFT, P, exec, pkill wofi || (cliphist list | wofi --dmenu | cliphist decode | wl-copy)
 
 # Move focus with mainMod + hjkl keys
 bind = $mainMod, H, movefocus, l
