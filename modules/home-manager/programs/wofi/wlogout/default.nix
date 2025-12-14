@@ -57,7 +57,7 @@
           border: 2px solid ${envTheme.blue};
         }
         
-        button:focus {
+        button:focus, button:active {
           background-color: ${envTheme.fg};
           border: 3px solid ${envTheme.blue};
           color: ${envTheme.bg};
