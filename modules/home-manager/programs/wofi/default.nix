@@ -58,7 +58,10 @@
       background-color: ${envTheme.blue};
       border: none; 
       outline-style: none;
-      color: ${envTheme.fg};
+    }
+    
+    #entry:selected #text {
+      color: ${envTheme.bg};
     }
   '';
 }
