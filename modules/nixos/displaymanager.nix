@@ -11,13 +11,4 @@
       animation = "matrix";
     };
   };
-
-  # Enable backlight control
-  programs.light.enable = true;
-  hardware.brightness.enable = true;
-
-  # Ensure brightnessctl is available system-wide for ly
-  environment.systemPackages = with pkgs; [
-    brightnessctl
-  ];
 }
