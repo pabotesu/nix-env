@@ -18,4 +18,9 @@
     };
     inputMethod.fcitx5.waylandFrontend = true;
   };
+
+  # GUIアプリは日本語優先、ターミナル出力は英語
+  environment.sessionVariables = {
+    LANGUAGE = "ja:en";
+  };
 }
