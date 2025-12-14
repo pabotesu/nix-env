@@ -11,7 +11,7 @@
 
     window {
       margin: 0px;
-      border: 2px solid ${envTheme.blue};
+      border: 2px solid ${envTheme.green};
       background-color: ${envTheme.bg};
       border-radius: 5;
     }
