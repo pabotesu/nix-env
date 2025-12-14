@@ -18,6 +18,7 @@
     ../programs/vpn
     ../programs/editor
     ../programs/secrets
+    ../programs/ai-tools
     ../programs/mako ## notification daemon
     ../programs/gtk
     ../programs/xdg
