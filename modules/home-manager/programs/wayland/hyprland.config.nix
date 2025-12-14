@@ -1,4 +1,4 @@
-{envTheme}:
+{envTheme, envColors}:
 ''
 
 #-----------------------#
@@ -76,8 +76,8 @@ general {
     gaps_in = 5
     gaps_out = 5
     border_size = 2
-    col.active_border = ${envTheme.blue} ${envTheme.cyan} 45deg
-    col.inactive_border = ${envTheme.black}aa
+    col.active_border = rgba(${envColors.blue}ee) rgba(${envColors.cyan}ee) 45deg
+    col.inactive_border = rgba(${envColors.black}aa)
 
     layout = dwindle
 
@@ -100,7 +100,7 @@ decoration {
         enabled = yes
         range = 4
         render_power = 3
-        color = ${envTheme.black}ee
+        color = rgba(${envColors.black}ee)
     }
 }
 

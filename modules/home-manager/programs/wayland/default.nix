@@ -1,4 +1,4 @@
-{envTheme, inputs, pkgs, config, ...}: {
+{envTheme, envColors, inputs, pkgs, config, ...}: {
  home.packages = with pkgs; [
     # Wayland utility
     wtype
@@ -29,7 +29,7 @@
   wayland = {
     windowManager.hyprland = {
       enable = true;
-      extraConfig = import ./hyprland.config.nix {inherit envTheme;};
+      extraConfig = import ./hyprland.config.nix {inherit envTheme envColors;};
     };
   };
 

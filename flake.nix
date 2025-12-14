@@ -91,6 +91,10 @@
           userConfig = users.${username};
           nhModules = "${self}/modules/home-manager";
           envTheme = import ./themes/colors/${theme};
+          envColors = let
+            removeHash = str: builtins.substring 1 (builtins.stringLength str) str;
+            xcolors = import ./themes/colors/${theme};
+          in builtins.mapAttrs (_: value: removeHash value) xcolors;
         };
         modules = [
           ./home/${username}/${hostname}
