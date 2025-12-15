@@ -34,6 +34,7 @@ monitor= , 1920x1080@60, 0x0, 1
 #       workspace       #
 #-----------------------#
 workspace = 1, monitor:, default:true, persistent:true
+workspace = 2, monitor:DP-1, default:true, persistent:true
 
 #-----------------------#
 #       exec-tools      #
