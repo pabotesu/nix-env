@@ -30,11 +30,8 @@ env = bitdepth,10
 # ---- nix-bookmonitor ---- #
 # 内蔵ディスプレイ (ThinkPad T14 Gen1)
 monitor=eDP-1, 1920x1080@60, 0x0, 1
-# DP-1: 左側外部モニター（接続時のみ有効）
-monitor=DP-1, preferred, 0x0, 1
-# DP-2: 右側外部モニター（接続時のみ有効）
-monitor=DP-2, preferred, 1920x0, 1
-# その他のモニター: 自動設定
+monitor=DP-1, preferred, auto, 1
+monitor=DP-2, preferred, auto, 1
 monitor=, preferred, auto, 1
 
 #-----------------------#
