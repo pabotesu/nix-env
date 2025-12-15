@@ -19,6 +19,7 @@
     ../programs/editor
     ../programs/secrets
     ../programs/ai-tools
+    ../programs/display
     ../programs/mako ## notification daemon
     ../programs/gtk
     ../programs/xdg
