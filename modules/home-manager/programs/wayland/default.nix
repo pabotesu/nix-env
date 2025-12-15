@@ -1,5 +1,9 @@
 {envTheme, envColors, inputs, pkgs, config, ...}: {
- home.packages = with pkgs; [
+  imports = [
+    ./hyprpaper.nix
+  ];
+
+  home.packages = with pkgs; [
     # Wayland utility
     wtype
     wev
@@ -8,7 +12,6 @@
     grimblast
     hyprpicker
     hyprcursor
-    hyprpaper
     wl-clipboard
     brightnessctl
     pamixer
