@@ -24,6 +24,7 @@
     "${nixosModules}/windowmanager.nix"
     "${nixosModules}/xserver.nix"
     "${nixosModules}/displaymanager.nix"
+    "${nixosModules}/virtualosation.nix"
   ];
 
   boot = {

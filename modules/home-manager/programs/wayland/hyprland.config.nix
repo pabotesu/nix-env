@@ -43,7 +43,7 @@ workspace = 1, monitor:eDP-1, default:true, persistent:true
 #       exec-tools      #
 #-----------------------#
 
-exec-once = /home/pabotesu/.nix-profile/bin/waybar
+# waybar is now managed by systemd (see waybar/default.nix)
 exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XMODIFIERS QT_IM_MODULE
 exec-once = mako # notification tool
 exec-once = hypridle
@@ -65,7 +65,7 @@ input {
     kb_layout = us
     kb_variant =
     kb_model =
-    kb_options =
+    kb_options = ctrl:nocaps
     kb_rules =
 
     follow_mouse = 1

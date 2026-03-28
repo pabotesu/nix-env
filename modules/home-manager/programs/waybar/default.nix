@@ -1,6 +1,10 @@
 {envTheme, pkgs, ...}: {
   programs.waybar = {
     enable = true;
+    systemd = {
+      enable = true;
+      target = "hyprland-session.target";
+    };
   };
   home.file.".config/waybar/config".source = ./waybar.config;
   home.file.".config/waybar/style.css".text = ''

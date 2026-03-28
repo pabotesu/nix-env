@@ -15,6 +15,7 @@
     nvfetcher # nix fetcher
     yazi # file manager
     bottom # TUI system monitor
+    dig
   ];
   programs.zsh = {
     enable = true;
