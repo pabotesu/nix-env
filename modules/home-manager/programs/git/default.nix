@@ -8,7 +8,7 @@
     
     settings = {
       user.name = "pabotesu";
-      user.email = "pab0te2u@gmail.com";
+      user.email = "pabotesu@users.noreply.github.com";
       init.defaultBranch = "main";
       ghq.root = "~/Src";
     };
