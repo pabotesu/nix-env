@@ -3,18 +3,17 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     # HomeManager
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Darwin
     darwin = {
-      url = "github:LnL7/nix-darwin/nix-darwin-25.11";
+      url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -36,7 +35,6 @@
     hyprsome,
     nix-homebrew,
     nixpkgs,
-    nixpkgs-unstable,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -80,14 +78,11 @@
 
     # Function for Home Manager configuration
     mkHomeConfiguration = system: username: hostname: theme:
-      let
-        pkgsUnstable = import inputs.nixpkgs-unstable { inherit system; };
-      in
       home-manager.lib.homeManagerConfiguration {
         pkgs     = import nixpkgs {inherit system;};
 
         extraSpecialArgs = {
-          inherit inputs outputs pkgsUnstable;
+          inherit inputs outputs;
           userConfig = users.${username};
           nhModules = "${self}/modules/home-manager";
           envTheme = import ./themes/colors/${theme};

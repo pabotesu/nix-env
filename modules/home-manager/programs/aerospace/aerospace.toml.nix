@@ -24,10 +24,11 @@ after-startup-command = [
   'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
 ]
 
-# Monitor mapping workspase
+# Monitor mapping workspace
 [workspace-to-monitor-force-assignment]
-1 = 'main'
-2 = 2
+1 = 1  # Main monitor
+2 = 2  # Second monitor
+3 = 3  # Third monitor
 
 # Key mapping preset
 [key-mapping]

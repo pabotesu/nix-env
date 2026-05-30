@@ -1,12 +1,11 @@
 {
   lib,
   pkgs,
-  pkgsUnstable,
   ...
 }: {
-  config = lib.mkIf (pkgsUnstable.stdenv.isDarwin) {
+  config = lib.mkIf (pkgs.stdenv.isDarwin) {
     # Ensure aerospace package installed
-    home.packages = with pkgsUnstable; [
+    home.packages = with pkgs; [
       aerospace
     ];
     # Source aerospace config from the home-manager store

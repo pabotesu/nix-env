@@ -4,7 +4,7 @@
     ./direnv.nix
   ];
   home.packages = with pkgs; [
-    neofetch
+    fastfetch
     eza
     ripgrep
     bat

@@ -3,7 +3,6 @@
   userConfig,
   envTheme,
   pkgs,
-  pkgsUnstable,
   ...
 }: {
   imports = [
@@ -16,18 +15,11 @@
     ../programs/shell
     ../programs/vpn
     ../programs/editor
+    ../programs/media_control
   ];
 
-  # Nixpkgs configuration
-  nixpkgs = {
-    overlays = [
-      outputs.overlays.stable-packages
-    ];
-
-    config = {
-      allowUnfree = true;
-    };
-  };
+  nixpkgs.config.allowUnfree = true;
+  home.enableNixpkgsReleaseCheck = false;
 
   # Home-Manager configuration for the user's home environment
   home = {

@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgsUnstable,
   ...
 }: {
   programs.git = {
@@ -19,7 +18,7 @@
     enableGitIntegration = true;
   };
 
-  home.packages = with pkgsUnstable; [
+  home.packages = with pkgs; [
     ghq
     peco
     hub

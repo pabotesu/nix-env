@@ -6,14 +6,7 @@
 }: {
 
   # Nixpkgs configuration
-  nixpkgs = {
-    overlays = [
-      outputs.overlays.stable-packages
-    ];
-    config = {
-      allowUnfree = true;
-    };
-  };
+  nixpkgs.config.allowUnfree = true;
 
   # Homebrew configuration
   nix-homebrew = {
@@ -43,6 +36,7 @@
       "wireshark-app"
       "orbstack"
       "vivaldi"
+      "calibre"
      ];
      taps = [
        "nikitabobko/tap"
