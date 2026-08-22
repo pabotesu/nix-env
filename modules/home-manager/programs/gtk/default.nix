@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{config, pkgs, ...}: {
   home.pointerCursor = 
     let 
       getFrom = url: hash: name: {
@@ -24,8 +24,8 @@
   gtk = {
     enable = true;
     theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Blue-Dark";
+      package = pkgs.adw-gtk3;
+      name = "adw-gtk3-dark";
     };
     iconTheme = {
       package = pkgs.adwaita-icon-theme;
@@ -40,6 +40,7 @@
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };
+    gtk4.theme = config.gtk.theme;
   };
 
   # Qt dark theme
@@ -53,7 +54,7 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      gtk-theme = "Flat-Remix-GTK-Blue-Dark";
+      gtk-theme = "adw-gtk3-dark";
     };
   };
 }

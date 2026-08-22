@@ -21,14 +21,26 @@ in
   home.file.".config/hypr/hyprpaper.conf".text = ''
     # Nix storeから直接壁紙を読み込み
     preload = ${wallpaperImage}
-    
+
     # 全モニターに同じ壁紙を適用
-    wallpaper = ,${wallpaperImage}
-    
+    wallpaper {
+      monitor =
+      path = ${wallpaperImage}
+    }
+
     # 個別設定する場合はこちら
-    # wallpaper = eDP-1,${wallpaperImage}
-    # wallpaper = DP-1,${wallpaperImage}
-    # wallpaper = DP-2,${wallpaperImage}
+    # wallpaper {
+    #   monitor = eDP-1
+    #   path = ${wallpaperImage}
+    # }
+    # wallpaper {
+    #   monitor = DP-1
+    #   path = ${wallpaperImage}
+    # }
+    # wallpaper {
+    #   monitor = DP-2
+    #   path = ${wallpaperImage}
+    # }
     
     # スプラッシュ画面を無効化（起動速度向上）
     splash = false

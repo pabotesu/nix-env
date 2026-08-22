@@ -26,12 +26,13 @@
     cliphist 
   ]
   ++ [
-      inputs.hyprsome.packages.${pkgs.system}.default # workspace manager
+      inputs.hyprsome.packages.${pkgs.stdenv.hostPlatform.system}.default # workspace manager
     ];
 
   wayland = {
     windowManager.hyprland = {
       enable = true;
+      configType = "lua";
       extraConfig = import ./hyprland.config.nix {inherit envTheme envColors;};
     };
   };

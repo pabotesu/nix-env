@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{config, pkgs, ...}: {
   imports = [
     ./starship.nix
     ./direnv.nix
@@ -19,6 +19,7 @@
   ];
   programs.zsh = {
     enable = true;
+    dotDir = config.home.homeDirectory;
     autocd = true; # cdなしでファイルパスだけで移動
     enableCompletion = true; # 自動補完
     autosuggestion.enable = true; # 入力サジェスト
