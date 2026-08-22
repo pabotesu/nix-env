@@ -16,6 +16,7 @@
     yazi # file manager
     bottom # TUI system monitor
     dig
+    marp-cli
   ];
   programs.zsh = {
     enable = true;

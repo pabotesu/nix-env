@@ -37,6 +37,7 @@
       "orbstack"
       "vivaldi"
       "calibre"
+      "google-chrome"
      ];
      taps = [
        "nikitabobko/tap"
